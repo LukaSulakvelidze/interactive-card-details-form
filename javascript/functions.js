@@ -53,12 +53,6 @@ export function dateValid(month_input, year_input) {
   }
 }
 
-let cardholder_input = document.getElementById("cardholder_input");
-let card_number_input = document.getElementById("card_number_input");
-let month_input = document.getElementById("month_input");
-let year_input = document.getElementById("year_input");
-let cvc_input = document.getElementById("cvc_input");
-
 let inputs = document.querySelectorAll(".input");
 
 export function validation() {
@@ -68,10 +62,8 @@ export function validation() {
     card_number_input.value.length == 19 &&
     month_input.value.length == 2 &&
     year_input.value.length == 4 &&
-    cvc_input.value.length == 3 // Assuming CVC length is 3
+    cvc_input.value.length == 3
   ) {
-    console.log("Valid inputs");
-
     let result_cont = document.createElement("div");
     result_cont.classList.add("result_cont");
     let container = document.querySelector(".container");
@@ -92,6 +84,5 @@ export function validation() {
     label_error.forEach((error) => {
       error.style.display = "block";
     });
-    console.log("Error in inputs");
   }
 }
