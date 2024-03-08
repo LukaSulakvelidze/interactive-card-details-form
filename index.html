@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Interactive Card</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cards_cont">
+        <div class="cards">
+          <div class="card_back_part">
+            <span id="cvc"> 000 </span>
+          </div>
+          <div class="card_front_part">
+            <img class="circles" src="./Icons/Circles.png" alt="Circles" />
+            <span id="card_number">0000 0000 0000 0000</span>
+            <span id="cardholder">JANE APPLESEED</span>
+            <div class="expire_date">
+              <span id="month">00 </span>
+              <span>/</span>
+              <span id="year"> 00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="main_form">
+        <div class="input_cont">
+          <label class="label_input"> Cardholder Name </label>
+          <input
+            type="text"
+            class="input"
+            id="cardholder_input"
+            placeholder="e.g. Jane Appleseed"
+            maxlength="19"
+          />
+          <label id="cardholder_label_error" class="label_error">
+            Wrong format, space between</label
+          >
+        </div>
+        <div class="input_cont">
+          <label class="label_input"> Card Number </label>
+          <input
+            type="tel"
+            class="input"
+            id="card_number_input"
+            maxlength="19"
+            placeholder="e.g. 1234 5678 9123 0000"
+          />
+          <label id="card_number_label_error" class="label_error">
+            Wrong format, numbers only
+          </label>
+        </div>
+        <div class="dates_form">
+          <div class="exp_date_input_cont">
+            <label class="label_input"> Exp. Date (MM/YY) </label>
+            <div class="date_input_cont">
+              <input
+                type="text"
+                class="input"
+                id="month_input"
+                placeholder="MM"
+                maxlength="2"
+              />
+              <input
+                type="text"
+                class="input"
+                id="year_input"
+                placeholder="YY"
+                maxlength="4"
+              />
+            </div>
+            <label id="date_error" class="label_error"> Can’t be blank</label>
+          </div>
+
+          <div class="cvc_cont">
+            <label class="label_input">CVC</label>
+            <input
+              type="text"
+              class="input"
+              id="cvc_input"
+              placeholder="e.g. 123"
+              maxlength="3"
+            />
+            <label id="cvv_error" class="label_error"> Can’t be blank</label>
+          </div>
+        </div>
+        <button id="submit_button" type="button">Confirm</button>
+      </form>
+    </div>
+
+    <script type="module" src="./javascript/script.js"></script>
+  </body>
+</html>
