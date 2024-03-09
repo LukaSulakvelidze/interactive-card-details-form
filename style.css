@@ -133,11 +133,7 @@
   color: var(--Red, #ff5050);
 }
 
-#cardholder_input,
-#card_number_input,
-#month_input,
-#year_input,
-#cvc_input {
+.input{
   font-size: 18px;
   font-weight: 500;
   padding: 11px 16px;
@@ -148,11 +144,13 @@
   background: var(--White, #fff);
 }
 
-#cardholder_input::placeholder,
-#card_number_input::placeholder,
-#month_input::placeholder,
-#year_input::placeholder,
-#cvc_input::placeholder {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input::placeholder {
   opacity: 0.25;
 }
 

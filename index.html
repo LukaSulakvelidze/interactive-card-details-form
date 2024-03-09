@@ -43,13 +43,13 @@
             maxlength="19"
           />
           <label id="cardholder_label_error" class="label_error">
-            Wrong format, space between</label
+            Wrong format, space between/only text</label
           >
         </div>
         <div class="input_cont">
           <label class="label_input"> Card Number </label>
           <input
-            type="tel"
+            type="number"
             class="input"
             id="card_number_input"
             maxlength="19"
@@ -64,14 +64,14 @@
             <label class="label_input"> Exp. Date (MM/YY) </label>
             <div class="date_input_cont">
               <input
-                type="text"
+                type="number"
                 class="input"
                 id="month_input"
                 placeholder="MM"
                 maxlength="2"
               />
               <input
-                type="text"
+                type="number"
                 class="input"
                 id="year_input"
                 placeholder="YY"
@@ -84,7 +84,7 @@
           <div class="cvc_cont">
             <label class="label_input">CVC</label>
             <input
-              type="text"
+              type="number"
               class="input"
               id="cvc_input"
               placeholder="e.g. 123"

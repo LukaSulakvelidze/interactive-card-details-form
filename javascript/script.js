@@ -25,9 +25,10 @@ cardholder_input.addEventListener("focusout", () => {
     cardholder_label_error.style.display = "none";
   }
 
-  if (!cardholder_input.value.includes(" ")) {
+  let containsNumbers = /\d/.test(cardholder_input.value);
+  if (!cardholder_input.value.includes(" ") || containsNumbers ) {
     cardholder_label_error.style.display = "block";
-    input_validation(cardholder_input);
+    cardholder_input.style.border = "1px solid red";
   } else {
     cardholder_label_error.style.display = "none";
     cardholder_input.style.border = "1px solid var(--Light-Grey, #dfdee0)";
