@@ -1,9 +1,9 @@
-import { formatCreditCardNumber } from "./functions.js";
-document
-  .getElementById("card_number_input")
-  .addEventListener("input", function () {
-    formatCreditCardNumber(this);
-  });
+import { formatNumber } from "./functions.js";
+
+let cardNumber = document.getElementById("card_number_input");
+cardNumber.addEventListener("input", () => {
+  formatNumber(cardNumber);
+});
 
 import { cardDetailShare } from "./functions.js";
 import { input_validation } from "./functions.js";
@@ -26,7 +26,7 @@ cardholder_input.addEventListener("focusout", () => {
   }
 
   let containsNumbers = /\d/.test(cardholder_input.value);
-  if (!cardholder_input.value.includes(" ") || containsNumbers ) {
+  if (!cardholder_input.value.includes(" ") || containsNumbers) {
     cardholder_label_error.style.display = "block";
     cardholder_input.style.border = "1px solid red";
   } else {
@@ -44,6 +44,7 @@ card_number_input.addEventListener("input", () => {
 let card_number_label_error = document.getElementById(
   "card_number_label_error"
 );
+
 card_number_input.addEventListener("focusout", () => {
   if (card_number_input.value === "") {
     card_number.textContent = "0000 0000 0000 0000";
@@ -68,6 +69,7 @@ let month_input = document.getElementById("month_input");
 
 month_input.addEventListener("input", () => {
   cardDetailShare(month_input, month);
+  formatNumber(month_input);
 });
 
 import { dateValid } from "./functions.js";
@@ -87,6 +89,7 @@ let year = document.getElementById("year");
 
 year_input.addEventListener("input", () => {
   cardDetailShare(year_input, year);
+  formatNumber(year_input);
 });
 
 year_input.addEventListener("focusout", () => {
@@ -105,6 +108,7 @@ let cvv_error = document.getElementById("cvv_error");
 
 cvc_input.addEventListener("input", () => {
   cardDetailShare(cvc_input, cvc);
+  formatNumber(cvc_input);
 });
 
 cvc_input.addEventListener("focusout", () => {

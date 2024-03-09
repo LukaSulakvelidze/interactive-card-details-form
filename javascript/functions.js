@@ -1,15 +1,11 @@
-export function formatCreditCardNumber(input) {
-  let value = input.value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
-  let formattedValue = "";
+export function formatNumber(input) {
+  let value = input.value.replace(/\D/g, "");
 
-  for (let i = 0; i < value.length; i++) {
-    if (i % 4 === 0 && i > 0) {
-      formattedValue += " ";
-    }
-    formattedValue += value[i];
+  if (value.length > 0) {
+    value = value.match(/.{1,4}/g).join(" ");
   }
 
-  input.value = formattedValue;
+  input.value = value;
 }
 
 export function cardDetailShare(input, reciver) {
